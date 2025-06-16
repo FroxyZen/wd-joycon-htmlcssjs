@@ -1,15 +1,24 @@
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+* {
     margin: 0;
-  }
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+}
   
 .container {
-    text-align: center;
-  }
+    padding-top: 12rem;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+}
 
 #particles-js {
     position: fixed;
@@ -22,8 +31,9 @@ body {
 }
   
 #hasil {
+    display: flex;
     background: white;
-    padding: 20px;
+    padding: 30px;
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 20px;
@@ -37,26 +47,26 @@ body {
     gap: 20px;
   }
   
-  .panel-kiri, .panel-kanan {
+.panel-kiri, .panel-kanan {
     background: rgba(255, 237, 237, 0.726);
     padding: 20px;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
+}
   
-  .panel-kiri {
+.panel-kiri {
     background-color: rgb(198, 225, 252);
-  }
+}
   
-  .middle-buttons {
+.middle-buttons {
     display: flex;
     gap: 8px;
     margin-top: 10px;
-  }
+}
   
-  button {
+button {
     padding: 10px 20px;
     background-color: #ebebeb;
     box-shadow: 1px 2px 4px #9b9b9b;
@@ -65,12 +75,97 @@ body {
     margin: 5px;
     border: 0;
     border-radius: 10px;
-  }
+}
   
-  .panel-kanan button {
+.panel-kanan button {
     background-color: #f8cbd1;
+}
+  
+button:hover {
+    background-color: #ddd;
+}
+
+.my-contact {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 20px;
+    left: 45%;
+}
+
+.contact-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
-  button:hover {
-    background-color: #ddd;
+  .popup-contact {
+    position: absolute;
+    bottom: 100%;
+    margin-bottom: 10px;
+    background-color: #ffffffe3;
+    color: #212121;
+    border-radius: 10px;
+    padding: 10px 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 100;
+    white-space: nowrap;
   }
+  
+  .popup-contact p {
+    margin: 5px 0;
+    font-size: 14px;
+  }
+  
+  .container-contact:hover + .popup-contact,
+  .contact-wrapper:hover .popup-contact {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  
+
+
+.container-contact {
+    display: inline-flex;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+    border: 2px solid whitesmoke;
+    border-radius: 20px;
+    color: whitesmoke;
+    gap: 10px;
+}
+
+
+.container-contact i {
+    padding: 5px;
+    font-size: 30px;
+}
+
+.popup-contact i {
+    padding: 5px;
+    font-size: 25px;
+    color: black;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.popup-contact i:hover {
+    border-color: black;
+    background-color: #f0f0f0;
+}
+
+.popup-contact p {
+    text-align: center;
+    padding-bottom: 4px;
+}
